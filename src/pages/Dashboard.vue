@@ -14,7 +14,7 @@ export default {
   created () {
     this.mountDataWeather()
     window.clearInterval(this.interval)
-    this.interval = window.setInterval(() => this.mountDataWeather(), 10000) // 600000 update data in 10minutes
+    this.interval = window.setInterval(() => this.mountDataWeather(), 600000) // update data in 10minutes
   },
   computed: mapGetters({
     weather: 'weather',
