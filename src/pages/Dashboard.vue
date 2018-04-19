@@ -1,17 +1,17 @@
 <template>
   <div class="dashboard">
-    <section v-for="(item, index) in itens" :key="index" class="item">
+    <section v-for="(item, key, index) in weather" :key="index" class="item">
       <div class="item_header">
-        {{ item.local }}
+        {{ item.name }}
       </div>
       <div class="item_content">
-        {{ item.temperature }}
+        {{ parseInt(item.main.temp) }}°
       </div>
       <div class="item_footer">
-        <span v-show="item.humidity"> <span>HUMIDITY</span> <b>{{ item.humidity }}</b>% </span>
-        <span v-show="item.pressure"> <span>PRESSURE</span> <b>{{ item.pressure }}</b>hPa</span>
+        <span v-show="key === 1"> <span>HUMIDITY</span> <b>{{ item.main.humidity }}</b>% </span>
+        <span v-show="key === 1"> <span>PRESSURE</span> <b>{{ item.main.pressure }}</b>hPa</span>
         <div>
-          {{ item.update }}
+          Updated at {{ item.update_at }}
         </div>
       </div>
     </section>
@@ -19,40 +19,28 @@
 </template>
 
 <script>
-import Api from '@/Api'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   created () {
-    Api
-      .get('Nuuk,GL')
-      .then((res) => console.log(res))
-      .catch((err) => console.error(err))
+    this.mountDataWeather()
   },
-  data () {
-    return {
-      itens: [
-        {
-          local: 'Nuukm GL',
-          temperature: '-4',
-          humidity: null,
-          pressure: null,
-          update: new Date()
-        },
-        {
-          local: 'Urubici, BR',
-          temperature: '19',
-          humidity: 75,
-          pressure: 892,
-          update: new Date()
-        },
-        {
-          local: 'Nairobi, KE',
-          temperature: '31',
-          humidity: null,
-          pressure: null,
-          update: new Date()
-        }
-      ]
+  computed: mapGetters({
+    weather: 'weather',
+    cities: 'cities'
+  }),
+  methods: {
+    ...mapActions([
+      'getApiWeatherCities',
+      'setWeatherCities'
+    ]),
+    mountDataWeather () {
+      let promisses = this.cities.map((citie) => {
+        return this.getApiWeatherCities(`${citie.name},${citie.country}`)
+      })
+      Promise
+        .all(promisses)
+        .then((values) => this.setWeatherCities(values))
     }
   },
   name: 'dashboard'

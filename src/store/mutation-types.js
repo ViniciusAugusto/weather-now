@@ -1,0 +1,1 @@
+export const WEATHER_ARRAY = 'WEATHER_ARRAY'
