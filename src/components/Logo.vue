@@ -32,5 +32,5 @@ header picture img {
   header picture img {
     width: 50vw;
   }
- }
+}
 </style>

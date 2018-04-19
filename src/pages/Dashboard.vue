@@ -126,6 +126,17 @@ export default {
   font-size: 1vh;
 }
 
-
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .dashboard {
+    flex-direction: column;
+  }
+  .dashboard .item:nth-child(2) {
+    order: -1
+  }
+}
 </style>
 
