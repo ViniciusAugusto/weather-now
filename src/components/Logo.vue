@@ -24,7 +24,13 @@ header {
 }
 
 header picture img {
-  margin: 5vh 0;
-  width: 30vw;
+  margin: 1vh 0;
+  width: 20vw;
 }
+
+@media screen and (max-width: 958px) {
+  header picture img {
+    width: 50vw;
+  }
+ }
 </style>

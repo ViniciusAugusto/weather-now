@@ -28,7 +28,15 @@ export default {
   --orange: #FF9632;
   --red: #ED1946;
 }
-body {
+html, body, #app, main{
+  /* Height and width fallback for older browsers. */
+  height: 100%;
+  width: 100%;
+  /* Set the height to match that of the viewport. */
+  height: 100vh;
+  /* Set the width to match that of the viewport. */
+  width: 100vw;
+  /* Remove any browser-default margins. */
   margin: 0;
 }
 
@@ -36,5 +44,6 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100%;
 }
 </style>
