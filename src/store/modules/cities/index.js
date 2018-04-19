@@ -1,6 +1,3 @@
-const mutations = {
-}
-
 const state = {
   itens: [
     {
@@ -28,7 +25,6 @@ const actions = {
 export default {
   state,
   getters,
-  mutations,
   actions,
   save: ['cities'] || { all: true }
 }

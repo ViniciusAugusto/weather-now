@@ -20,7 +20,6 @@ export default {
   background-color: var(--background);
   box-shadow: 0 0 .5px 0 var(--box-shadow) inset;
   text-align: center;
-  display: table;
 }
 .loader img {
   position: absolute;
