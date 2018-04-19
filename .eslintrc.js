@@ -8,6 +8,8 @@ module.exports = {
   },
   env: {
     browser: true,
+    node: true,
+    jest: true
   },
   // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
   extends: 'standard',
