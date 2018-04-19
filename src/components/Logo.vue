@@ -21,6 +21,12 @@ export default {
 header {
   width: 100vw;
   text-align: center;
+  position: fixed;
+  height: 6vh;
+  background: #FFF;
+  top: 0px;
+  z-index: 1;
+  display: block;
 }
 
 header picture img {
@@ -29,6 +35,9 @@ header picture img {
 }
 
 @media screen and (max-width: 958px) {
+  header {
+    height: 7vh;
+  }
   header picture img {
     width: 50vw;
   }

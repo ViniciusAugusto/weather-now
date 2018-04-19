@@ -4,7 +4,7 @@
       <div class="item_header">
         {{ item.name }}
       </div>
-      <div class="item_content">
+      <div class="item_content" :class="colorTemp(parseInt(item.main.temp))">
         {{ parseInt(item.main.temp) }}°
       </div>
       <div class="item_footer">
@@ -24,11 +24,18 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   created () {
     this.mountDataWeather()
+    window.clearInterval(this.interval)
+    this.interval = window.setInterval(() => this.mountDataWeather(), 600000)
   },
   computed: mapGetters({
     weather: 'weather',
     cities: 'cities'
   }),
+  data () {
+    return {
+      interval: null
+    }
+  },
   methods: {
     ...mapActions([
       'getApiWeatherCities',
@@ -36,11 +43,17 @@ export default {
     ]),
     mountDataWeather () {
       let promisses = this.cities.map((citie) => {
-        return this.getApiWeatherCities(`${citie.name},${citie.country}`)
+        return this.getApiWeatherCities(`${citie.name}, ${citie.country}`)
       })
       Promise
         .all(promisses)
         .then((values) => this.setWeatherCities(values))
+    },
+    colorTemp (temp) {
+      // - Temperaturas igual ou abaixo de 5 graus devem ser exibidas em azul
+      // - Temperaturas acima de 6 graus e igual ou abaixo de 25 devem ser exibidas em laranja
+      // - Temperaturas acima de 26 graus devem ser exibidas em vermelho
+      return temp <= 5 ? 'blue' : temp > 26 ? 'red' : 'orange'
     }
   },
   name: 'dashboard'
@@ -51,8 +64,7 @@ export default {
 .dashboard {
   width: 100vw;
   min-height: 100vh;
-  overflow: hidden;
-  margin: 0 auto;
+  overflow-x: hidden;
   background-color: var(--background);
   box-shadow: 0 0 .5px 0 var(--box-shadow) inset;
   display: flex;
@@ -69,10 +81,23 @@ export default {
   width: 280px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.1);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  border-radius: .5vw
 }
 
 .dashboard .item:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.2);
+}
+
+.dashboard .item .item_content.orange{
+  color: var(--orange)
+}
+
+.dashboard .item .item_content.red{
+  color: var(--red)
+}
+
+.dashboard .item .item_content.blue{
+  color: var(--blue)
 }
 
 .item .item_header, .item .item_content, .item .item_footer{
@@ -80,7 +105,7 @@ export default {
   text-align: center
 }
 .item .item_header {
-  color: #737c84;
+  color: var(--second);
   font-size: 2vh;
   padding: 2vh 0;
   border-bottom: 2px solid var(--divider)
@@ -91,7 +116,7 @@ export default {
 }
 
 .item .item_footer {
-  color: #737c84;
+  color: var(--second);
   font-size: 1.5vh;
   padding: 2vh 0;
   background-color: #F8F8F8;
@@ -103,7 +128,7 @@ export default {
   margin: 10px 0;
   display: block;
   position: relative;
-  font-size: 1.5vh;
+  font-size: 1.7vh;
 }
 
 .item .item_footer span:first-child{
@@ -119,16 +144,13 @@ export default {
   left: 0;
   top: -25px;
   width: 100%;
-  font-size: 1vh;
+  font-size: 1.3vh;
 }
 
-/*
-  ##Device = Tablets, Ipads (portrait)
-  ##Screen = B/w 768px to 1024px
-*/
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (max-width: 1024px) {
   .dashboard {
     flex-direction: column;
+    margin-top: 8vh;
   }
   .dashboard .item:nth-child(2) {
     order: -1
