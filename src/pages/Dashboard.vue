@@ -19,7 +19,15 @@
 </template>
 
 <script>
+import Api from '@/Api'
+
 export default {
+  created () {
+    Api
+      .get('Nuuk,GL')
+      .then((res) => console.log(res))
+      .catch((err) => console.error(err))
+  },
   data () {
     return {
       itens: [

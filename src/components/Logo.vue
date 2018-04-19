@@ -20,7 +20,7 @@ export default {
 <style scoped>
 header {
   width: 100vw;
-  text-align: center
+  text-align: center;
 }
 
 header picture img {
