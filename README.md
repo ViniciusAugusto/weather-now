@@ -1,21 +1,65 @@
-# challenge-weather
+# Desafio frontend Conta Azul
 
-> Desafio frontend Conta Azul
+[App Demo](https://weather-now-challenge.herokuapp.com/)
 
-## Build Setup
+## Getting Started
+
+Aplicação desenvolvida utilizando VueJs como Framework
+
+``` bash
+git clone https://github.com/ViniciusAugusto/weather-now.git
+cd weather-now
+```
+
+### Prerequisites
+
+NodeJs
+
+### Installing
 
 ``` bash
 # install dependencies
 npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Running development
+
+``` bash
+npm run dev
+```
+
+## Build App
+
+``` bash
+npm run build
+```
+
+## Running the tests
+
+``` bash
+# run unit test
+npm test
+```
+
+## Deployment
+
+Deploy app in heroku
+
+``` bash
+# run deploy
+npm run deplou
+```
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/ViniciusAugusto/weather-now/tags).
+
+## Authors
+
+* **Vinicius Augusto Cunha** - *Initial work* - [ViniciusAugusto](https://github.com/ViniciusAugusto)
+
+See also the list of [contributors](https://github.com/ViniciusAugusto/weather-now/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
