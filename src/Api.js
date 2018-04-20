@@ -1,4 +1,4 @@
-const URL = 'http://api.openweathermap.org/data/2.5/weather'
+const URL = 'https://api.openweathermap.org/data/2.5/weather'
 const API_KEY = '8287c2848177adc5bfb5564573ed7168'
 
 export default {

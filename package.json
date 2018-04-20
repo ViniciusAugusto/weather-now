@@ -11,7 +11,8 @@
     "lint": "eslint --ext .js,.vue src",
     "lint:fix": "npm run lint -- --fix",
     "test": "npm run lint && npm run unit",
-    "unit": "jest --coverage --watchAll"
+    "unit": "jest --coverage --watchAll",
+    "deploy": "npm run build && git add . && git commit -a -m 'Deploy heroku app.' && git push heroku master"
   },
   "dependencies": {
     "jest-serializer-vue": "^1.0.0",
