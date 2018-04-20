@@ -4,7 +4,13 @@
 
 ## Getting Started
 
-Aplicação desenvolvida utilizando VueJs como Framework
+Aplicação desenvolvida utilizando [VueJs](https://vuejs.org/) como Framework, foi utilizado o [Vuex](https://vuex.vuejs.org/en/) para armazernar os dados de temperatura das cidades e lidar com estado da aplicação.
+
+Para teste unitário foi utilizado o [Jest](https://facebook.github.io/jest/) e [vue-test-utils](https://vue-test-utils.vuejs.org/pt-br/)
+
+Para empacotar a aplicação foi utilizado o [Webpack](https://webpack.js.org/)
+
+A Aplicação está hospeda no [Heroku](https://www.heroku.com/) para demonstrar o funcionamento.
 
 ``` bash
 git clone https://github.com/ViniciusAugusto/weather-now.git
