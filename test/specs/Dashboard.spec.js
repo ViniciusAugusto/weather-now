@@ -56,4 +56,8 @@ describe('Dashboard.vue', () => {
   test('load initial value true after created', () => {
     expect(cmp.vm.load).toBeTruthy()
   })
+
+  test('has the expected html structure', () => {
+    expect(cmp.element).toMatchSnapshot()
+  })
 })

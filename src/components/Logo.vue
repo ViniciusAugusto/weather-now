@@ -31,7 +31,7 @@ header {
 
 header picture img {
   margin: 1vh 0;
-  width: 20vw;
+  width: 15vw;
 }
 
 @media screen and (max-width: 958px) {
