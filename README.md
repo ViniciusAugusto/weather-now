@@ -2,7 +2,8 @@
 
 [![GitHub version](https://badge.fury.io/gh/ViniciusAugusto%2Fweather-now.svg)](https://badge.fury.io/gh/ViniciusAugusto%2Fweather-now)
 [![Coverage Status](https://coveralls.io/repos/github/ViniciusAugusto/weather-now/badge.svg)](https://coveralls.io/github/ViniciusAugusto/weather-now)
-
+[![dependencies Status](https://david-dm.org/ViniciusAugusto/weather-now/status.svg)](https://david-dm.org/ViniciusAugusto/weather-now)
+[![codebeat badge](https://codebeat.co/badges/9faadde1-75c7-4e2e-a9e0-a9b8ec0b8df9)](https://codebeat.co/projects/github-com-viniciusaugusto-weather-now-master)
 
 [App Demo](https://weather-now-challenge.herokuapp.com/)
 
