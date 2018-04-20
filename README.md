@@ -1,5 +1,6 @@
 # Desafio frontend Conta Azul
 
+[![GitHub version](https://badge.fury.io/gh/ViniciusAugusto%2Fweather-now.svg)](https://badge.fury.io/gh/ViniciusAugusto%2Fweather-now)
 [![Coverage Status](https://coveralls.io/repos/github/ViniciusAugusto/weather-now/badge.svg)](https://coveralls.io/github/ViniciusAugusto/weather-now)
 
 
