@@ -1,5 +1,8 @@
 # Desafio frontend Conta Azul
 
+[![Coverage Status](https://coveralls.io/github/ViniciusAugusto/weather-now/badge.svg?branch=master)](https://coveralls.io/r/ViniciusAugusto/weather-now?branch=master)
+
+
 [App Demo](https://weather-now-challenge.herokuapp.com/)
 
 ## Challenge
