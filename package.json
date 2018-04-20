@@ -12,6 +12,7 @@
     "lint:fix": "npm run lint -- --fix",
     "test": "npm run lint && npm run unit",
     "unit": "jest --coverage --watchAll",
+    "coveralls": "node_modules/.bin/jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "deploy": "npm run build && git add . && git commit -a -m 'Deploy heroku app.' && git push heroku master"
   },
   "dependencies": {
@@ -36,6 +37,7 @@
     "chalk": "^2.1.0",
     "connect-history-api-fallback": "^1.4.0",
     "copy-webpack-plugin": "^4.1.1",
+    "coveralls": "^3.0.0",
     "css-loader": "^0.28.7",
     "cssnano": "^3.10.0",
     "eslint": "^4.9.0",
@@ -101,6 +103,7 @@
     },
     "snapshotSerializers": [
       "<rootDir>/node_modules/jest-serializer-vue"
-    ]
+    ],
+    "collectCoverage": true
   }
 }
