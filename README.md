@@ -75,7 +75,7 @@ Deploy app in heroku
 
 ``` bash
 # run deploy
-npm run deplou
+npm run deploy
 ```
 
 ## Versioning
